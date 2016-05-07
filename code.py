@@ -1,6 +1,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 code_box = urlopen('http://www.infibeam.com/deal-of-the-day.html').read()
+soup = BeautifulSoup(code_box, 'html.parser')
 mydivs = soup.find("div", { "class" : "carousel_list" })
 lins = mydivs.find_all('a')
 for links in lins:
